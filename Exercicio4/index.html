@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="video">
+        <video src="movie.mp4" id="myvideo" meter></video>
+        
+
+        <button onclick="document.getElementById('myvideo').play();"> Play
+            <button onclick="document.getElementById('myvideo').pause();"> Pause
+    </div>
+
+    <div class="audio">
+
+        <h2> Audio Mp3 </h2>
+
+        <audio src="vincent.mp3" preload="none" loop id="mp3-1"></audio>
+        <img src="play.png" alt=""  id="image1">
+
+
+        <br>
+
+        <h2> Audio Ogg </h2>
+        <audio src="vincent.ogg" preload="none" loop id="mp3-2"></audio>
+        <img src="play.png" alt=""  id="image2">
+
+    </div>
+
+<script>
+    var audio1 =  document.getElementById("mp3-1");
+    var audio2 =  document.getElementById("mp3-2");
+    var img1 =  document.getElementById("image1");
+    var img2 =  document.getElementById("image2");
+    
+    
+    img1.addEventListener("click" , mp31);
+    img2.addEventListener("click" , mp32);
+
+    function mp31(){
+
+        audio1.play();
+
+     if(audio1.load()){
+      img1.src = "loading.gif";
+     } else if (audio1.pause())
+        img1.src = "pause.png";
+    }  
+
+
+    function mp32(){
+
+audio2.play();
+
+if(audio2.load()){
+      img2.src = "loading.gif";
+     } else if (audio1.pause())
+        img2.src = "pause.png";
+
+        
+    }  
+
+    
+
+
+
+</script>
+
+
+</body>
+
+</html>
